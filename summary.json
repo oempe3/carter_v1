@@ -1,0 +1,163 @@
+[
+  {
+    "Motor": "Motor#1",
+    "Consumo_RDO_L": 66.0,
+    "Consumo_Insp_L": null,
+    "Horas": 75.0,
+    "LH": 0.88
+  },
+  {
+    "Motor": "Motor#10",
+    "Consumo_RDO_L": 132.0,
+    "Consumo_Insp_L": null,
+    "Horas": 45.0,
+    "LH": 2.9333
+  },
+  {
+    "Motor": "Motor#11",
+    "Consumo_RDO_L": 66.0,
+    "Consumo_Insp_L": null,
+    "Horas": 38.0,
+    "LH": 1.7368
+  },
+  {
+    "Motor": "Motor#12",
+    "Consumo_RDO_L": 0.0,
+    "Consumo_Insp_L": null,
+    "Horas": 39.0,
+    "LH": 0.0
+  },
+  {
+    "Motor": "Motor#13",
+    "Consumo_RDO_L": 132.0,
+    "Consumo_Insp_L": null,
+    "Horas": 66.0,
+    "LH": 2.0
+  },
+  {
+    "Motor": "Motor#14",
+    "Consumo_RDO_L": 0.0,
+    "Consumo_Insp_L": null,
+    "Horas": 61.0,
+    "LH": 0.0
+  },
+  {
+    "Motor": "Motor#15",
+    "Consumo_RDO_L": -66.0,
+    "Consumo_Insp_L": null,
+    "Horas": 64.0,
+    "LH": -1.0312
+  },
+  {
+    "Motor": "Motor#16",
+    "Consumo_RDO_L": 0.0,
+    "Consumo_Insp_L": null,
+    "Horas": 71.0,
+    "LH": 0.0
+  },
+  {
+    "Motor": "Motor#17",
+    "Consumo_RDO_L": 0.0,
+    "Consumo_Insp_L": null,
+    "Horas": 63.0,
+    "LH": 0.0
+  },
+  {
+    "Motor": "Motor#18",
+    "Consumo_RDO_L": 0.0,
+    "Consumo_Insp_L": null,
+    "Horas": 60.0,
+    "LH": 0.0
+  },
+  {
+    "Motor": "Motor#19",
+    "Consumo_RDO_L": 0.0,
+    "Consumo_Insp_L": null,
+    "Horas": 48.0,
+    "LH": 0.0
+  },
+  {
+    "Motor": "Motor#2",
+    "Consumo_RDO_L": 66.0,
+    "Consumo_Insp_L": null,
+    "Horas": 60.0,
+    "LH": 1.1
+  },
+  {
+    "Motor": "Motor#20",
+    "Consumo_RDO_L": 0.0,
+    "Consumo_Insp_L": null,
+    "Horas": 45.0,
+    "LH": 0.0
+  },
+  {
+    "Motor": "Motor#21",
+    "Consumo_RDO_L": 66.0,
+    "Consumo_Insp_L": null,
+    "Horas": 46.0,
+    "LH": 1.4348
+  },
+  {
+    "Motor": "Motor#22",
+    "Consumo_RDO_L": 66.0,
+    "Consumo_Insp_L": null,
+    "Horas": 52.0,
+    "LH": 1.2692
+  },
+  {
+    "Motor": "Motor#23",
+    "Consumo_RDO_L": 66.0,
+    "Consumo_Insp_L": null,
+    "Horas": 43.0,
+    "LH": 1.5349
+  },
+  {
+    "Motor": "Motor#3",
+    "Consumo_RDO_L": 264.0,
+    "Consumo_Insp_L": null,
+    "Horas": 75.0,
+    "LH": 3.52
+  },
+  {
+    "Motor": "Motor#4",
+    "Consumo_RDO_L": 0.0,
+    "Consumo_Insp_L": null,
+    "Horas": 41.0,
+    "LH": 0.0
+  },
+  {
+    "Motor": "Motor#5",
+    "Consumo_RDO_L": -132.0,
+    "Consumo_Insp_L": null,
+    "Horas": 40.0,
+    "LH": -3.3
+  },
+  {
+    "Motor": "Motor#6",
+    "Consumo_RDO_L": 66.0,
+    "Consumo_Insp_L": null,
+    "Horas": 86.0,
+    "LH": 0.7674
+  },
+  {
+    "Motor": "Motor#7",
+    "Consumo_RDO_L": 66.0,
+    "Consumo_Insp_L": null,
+    "Horas": -8056.0,
+    "LH": -0.0082
+  },
+  {
+    "Motor": "Motor#8",
+    "Consumo_RDO_L": 132.0,
+    "Consumo_Insp_L": null,
+    "Horas": 23.0,
+    "LH": 5.7391
+  },
+  {
+    "Motor": "Motor#9",
+    "Consumo_RDO_L": 0.0,
+    "Consumo_Insp_L": null,
+    "Horas": 43.0,
+    "LH": 0.0
+  }
+]
