@@ -1,0 +1,26 @@
+[
+  {
+    "motor": "06",
+    "circuito": "Trifásico",
+    "corrente_fase_A": 26.1,
+    "pot_1_kw": 13.5,
+    "pot_2_kw": 27.0,
+    "media_kwh": null
+  },
+  {
+    "motor": "19",
+    "circuito": "Trifásico",
+    "corrente_fase_A": 26.1,
+    "pot_1_kw": 13.5,
+    "pot_2_kw": 27.0,
+    "media_kwh": null
+  },
+  {
+    "motor": "20",
+    "circuito": "Bifásico",
+    "corrente_fase_A": 45.2,
+    "pot_1_kw": 18.0,
+    "pot_2_kw": 36.0,
+    "media_kwh": null
+  }
+]

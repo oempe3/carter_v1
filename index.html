@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Análise de Aquecimento de Motores</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <style>
+    :root{
+      --bg:#0e1319;
+      --panel:#151c24;
+      --muted:#94a3b8;
+      --text:#e6edf3;
+      --card:#111827;
+      --stroke:#1f2937;
+      --brand:#1f3a5a;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial}
+    header{display:flex;align-items:center;gap:.8rem;padding:14px 20px;background:linear-gradient(90deg,var(--panel),#0f172a);border-bottom:1px solid var(--stroke)}
+    header img{height:36px;width:auto}
+    header .brand{font-weight:700;letter-spacing:.5px}
+    main{max-width:1100px;margin:0 auto;padding:20px}
+    h1{margin:.2rem 0 0.2rem}
+    .sub{color:#cbd5e1;margin:0 0 16px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+    .card{background:var(--card); border:1px solid var(--stroke); border-radius:16px; padding:14px; box-shadow:0 8px 20px rgba(0,0,0,.25)}
+    .card h3{margin:0 0 8px}
+    .kv{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .panel{background:var(--panel); border:1px solid var(--stroke); border-radius:16px; padding:12px; margin:16px 0}
+    #chart{height:420px}
+    footer{margin:28px 0 10px; text-align:center; color:#94a3b8}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo"/>
+    <div class="brand">UTE PERNAMBUCO III</div>
+  </header>
+  <main>
+    <h1>Análise de Aquecimento de Motores</h1>
+    <div class="sub">Comparação de Performance dos Aquecedores UG#06, UG#19 e UG#20</div>
+
+    <div class="panel">
+      <div id="chart"></div>
+    </div>
+
+    <div id="cards" class="grid"></div>
+
+    <footer>© 2025 Análise de Performance de Motores</footer>
+  </main>
+  <script>
+    async function boot(){
+      const data = await d3.json("aquecimento.json");
+      // Build cards
+      const cards = document.getElementById("cards");
+      data.forEach(d=>{
+        const div = document.createElement("div");
+        div.className = "card";
+        div.innerHTML = `
+          <h3>Motor #${d.motor}</h3>
+          <div class="kv">
+            <div>Circuito:</div><div><b>${d.circuito}</b></div>
+            <div>Corrente por fase:</div><div><b>${d.corrente_fase_A} A</b></div>
+            <div>Potência 1 estágio:</div><div><b>${d.pot_1_kw} kW</b></div>
+            <div>Potência 2 estágios:</div><div><b>${d.pot_2_kw} kW</b></div>
+            <div>Média total de consumo:</div><div><b>${d.media_kwh==null?"-":d.media_kwh+" kWh"}</b></div>
+          </div>
+        `;
+        cards.appendChild(div);
+      });
+
+      // Build comparison chart (bars)
+      const motors = data.map(d=>"UG#"+d.motor);
+      const pot1 = data.map(d=>d.pot_1_kw);
+      const pot2 = data.map(d=>d.pot_2_kw);
+      const corr = data.map(d=>d.corrente_fase_A);
+
+      const trace1 = {x: motors, y: pot1, name: "Potência 1 estágio (kW)", type: "bar"};
+      const trace2 = {x: motors, y: pot2, name: "Potência 2 estágios (kW)", type: "bar"};
+      const trace3 = {x: motors, y: corr, name: "Corrente por fase (A)", type: "line", yaxis: "y2"};
+
+      const layout = {
+        paper_bgcolor: "rgba(0,0,0,0)",
+        plot_bgcolor: "rgba(0,0,0,0)",
+        margin: {l:50,r:50,t:20,b:50},
+        xaxis: {title: "Motores"},
+        yaxis: {title: "Potência (kW)", gridcolor:"#223042"},
+        yaxis2: {title: "Corrente (A)", overlaying: "y", side: "right", gridcolor:"#223042"},
+        legend: {orientation:"h", y:-0.2}
+      };
+
+      Plotly.newPlot("chart", [trace1, trace2, trace3], layout, {displaylogo:false, responsive:true});
+    }
+    boot();
+  </script>
+</body>
+</html>
